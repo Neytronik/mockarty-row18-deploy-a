@@ -69,6 +69,9 @@ python3 docs/deploy-handoff/deploy_handoff.py --repo-dir . --dry-run \
   --base <base-commit>
 ```
 
+`--base` (and `--commit-sha`) must be a full 40-character SHA; the scope check
+refuses an abbreviation. Use the commit before the docs marker as the base.
+
 Live handoff against the deploy node (endpoints from the Mockarty mocks below;
 the CLI resolves `--commit-sha` from `git rev-parse HEAD` by default):
 
@@ -134,7 +137,7 @@ what was executed.
 python3 -m unittest discover -s docs/deploy-handoff -p 'test_*.py' -v
 ```
 
-43 tests: request validation and SHA pinning, out-of-scope service/repository/
+44 tests: request validation and SHA pinning, out-of-scope service/repository/
 target/environment/deployer, repository isolation and docs-only diff against a
 real temporary git repository, git-only subprocess guard, deploy-node refusals,
 green/red/intermittent/short health windows, every required receipt field and

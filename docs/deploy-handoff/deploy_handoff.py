@@ -802,7 +802,11 @@ def _main(argv: Optional[Sequence[str]] = None) -> int:
         return EXIT_REQUEST_INVALID
 
     delivered_sha = args.commit_sha or head
-    scope = check_repository_scope(args.repo_dir, args.base)
+    try:
+        scope = check_repository_scope(args.repo_dir, args.base)
+    except (HandoffError, subprocess.CalledProcessError) as exc:
+        print(json.dumps({"ok": False, "error": f"repository scope check failed: {exc}"}, indent=2))
+        return EXIT_REQUEST_INVALID
     try:
         assert_delivered_sha(delivered_sha, head)
         request = build_deploy_request(delivered_sha)

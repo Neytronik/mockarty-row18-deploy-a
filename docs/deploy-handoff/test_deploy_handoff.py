@@ -588,6 +588,14 @@ class CliTests(unittest.TestCase):
         self.assertEqual(out["ok"], False)
         self.assertIn("does not match delivered commit", out["error"])
 
+    def test_cli_rejects_a_base_that_is_not_a_full_sha(self) -> None:
+        with tempfile.TemporaryDirectory() as root:
+            init_repository(root, {"docs/msdeploy.md": "marker\n"})
+            out = _run_main(["--repo-dir", root, "--dry-run", "--base", "a84f447"])
+        self.assertEqual(out["ok"], False)
+        self.assertEqual(out["exitCode"], handoff.EXIT_REQUEST_INVALID)
+        self.assertIn("repository scope check failed", out["error"])
+
 
 def _run_main(argv: List[str]) -> Dict[str, Any]:
     buffer: List[str] = []
