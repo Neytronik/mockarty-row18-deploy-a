@@ -93,6 +93,7 @@ done
 [ -n "$HANDOFF" ] || die 6 "--handoff PATH must not be empty"
 
 git rev-parse --is-inside-work-tree >/dev/null 2>&1 || die 5 "not inside a git work tree"
+command -v curl >/dev/null 2>&1 || die 5 "curl is required to check the acceptance surface"
 
 now_utc() { date -u +%Y-%m-%dT%H:%M:%SZ; }
 
