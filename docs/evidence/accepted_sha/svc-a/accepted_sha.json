@@ -1,0 +1,61 @@
+{
+  "accepted_sha": "5c459c09278961dfe6cbf5729ee318c859dda71e",
+  "actor": "deploy-node",
+  "allowed_scope": "docs/",
+  "candidate_sha": "5c459c09278961dfe6cbf5729ee318c859dda71e",
+  "changed_paths": [
+    "docs/msdeploy.md"
+  ],
+  "checks": [
+    {
+      "detail": "origin is https://github.com/Neytronik/mockarty-row18-deploy-a, expected https://github.com/Neytronik/mockarty-row18-deploy-a",
+      "name": "repository_is_svc_a",
+      "status": "pass"
+    },
+    {
+      "detail": "candidate '5c459c09278961dfe6cbf5729ee318c859dda71e' must be the full 40-character lowercase commit SHA",
+      "name": "candidate_sha_is_full",
+      "status": "pass"
+    },
+    {
+      "detail": "commit 5c459c09278961dfe6cbf5729ee318c859dda71e resolves to 5c459c09278961dfe6cbf5729ee318c859dda71e",
+      "name": "candidate_commit_exists",
+      "status": "pass"
+    },
+    {
+      "detail": "docs/msdeploy.md found in the checkout of 5c459c09278961dfe6cbf5729ee318c859dda71e",
+      "name": "marker_file_present",
+      "status": "pass"
+    },
+    {
+      "detail": "docs/msdeploy.md matches row[[:space:]#-]*18",
+      "name": "marker_present",
+      "status": "pass"
+    },
+    {
+      "detail": "docs/msdeploy.md names svc-a",
+      "name": "service_named",
+      "status": "pass"
+    },
+    {
+      "detail": "docs/msdeploy.md names k8s-prod-a",
+      "name": "target_named",
+      "status": "pass"
+    },
+    {
+      "detail": "all changed paths stay under 'docs/': docs/msdeploy.md",
+      "name": "documentation_scope",
+      "status": "pass"
+    }
+  ],
+  "frozen_at": "2026-11-20T10:58:49Z",
+  "gate": "docs/acceptance-gate/checks/svc-a-row18/gate.py",
+  "marker_line": "Row #18 deploy marker: row #18",
+  "marker_path": "docs/msdeploy.md",
+  "marker_regex": "row[[:space:]#-]*18",
+  "repository": "https://github.com/Neytronik/mockarty-row18-deploy-a.git",
+  "schema": "row18.accepted_sha/v1",
+  "scope_base": "commit",
+  "service": "svc-a",
+  "target": "k8s-prod-a"
+}

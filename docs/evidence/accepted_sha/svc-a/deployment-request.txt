@@ -1,0 +1,4 @@
+service=svc-a
+target=k8s-prod-a
+accepted_sha=5c459c09278961dfe6cbf5729ee318c859dda71e
+actor=deploy-node

@@ -1,0 +1,11 @@
+{
+  "accepted_sha": "5c459c09278961dfe6cbf5729ee318c859dda71e",
+  "body_preview": "{\"accepted_sha\":\"5c459c09278961dfe6cbf5729ee318c859dda71e\",\"actor\":\"deploy-node\",\"deployment_id\":\"dep-svc-a-5c459c0\",\"frozen\":true,\"service\":\"svc-a\",\"status\":\"accepted\",\"target\":\"k8s-prod-a\"}",
+  "body_sha256": "e4119edc045b5024ccf0db0e673006a021e3bf033b9d709fa8b2ffd69e4baac6",
+  "idempotency_key": "sha256:64a1ce0f8a40b91d95da2a0057bc14fdfbb3a9c521b7bde2d76024575958d680",
+  "ok": true,
+  "schema": "row18.deploy_request.submission/v1",
+  "status_code": 202,
+  "submitted_at": "2026-11-20T10:58:49Z",
+  "url": "http://127.0.0.1:5970/stubs/sandbox/row18/svc-a/deployments"
+}
